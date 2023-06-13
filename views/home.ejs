@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Chat Data Extractor</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="card">
+        <img src="assets/logo.svg" id="logo" width="70px">
+        <h1>Snapchat Chat Extractor</h1>
+        <form action="/" method="post" id="submitForm" enctype="multipart/form-data">
+            <label for="username">Username for the chat</label>
+            <input type="text" name="username" id="username" placeholder="Username..." required>
+            <br>
+            <label for="json">"chat_history.json" file <a target="_blank" href="https://help.snapchat.com/hc/en-us/articles/7012305371156-How-do-I-download-my-data-from-Snapchat-">(how to get)</a></label>
+            <input type="file" name="json" id="jsonFile" required>
+            <br>
+            <input type="submit" value="💫 Generate" id="genButton">
+        </form>
+    </div>
+</body>
+</html>

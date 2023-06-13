@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= username %> - Conversation</title>
+  <link rel="stylesheet" href="../assets/chat.css">
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <div class="chat-window">
+    <h1 id="title">Chat messages from <%= username %></h1>
+    <div id="chat-messages">
+      <% if (messages && messages.length > 0) { %>
+        <% messages.forEach((message) => { %>
+          <div class="message">
+            <div class="user"><%= message.User %></div>
+            <div class="timestamp"><%= message.Date %> <%= message.Time %></div>
+            <div class="text"><%= message.Text %></div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div style="color: white;">No messages found.</div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
