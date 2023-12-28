@@ -1,4 +1,6 @@
-# Snapchat Chat Extractor
+![Banner](brand.png)
+
+# SnapScrape
 A simple tool to get your old conversations a look!
 
 # How to use it

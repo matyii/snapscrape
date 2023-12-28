@@ -29,8 +29,18 @@ app.get('/', (req, res) => {
 });
 
 app.post("/", upload.single("json"), (req, res) => {
-    formatChatMessages(req.file.destination + req.file.filename, req.body.username);
-    res.redirect("/chat/" + req.body.username)
+  const filePath = req.file.destination + req.file.filename;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading file:', err);
+          return res.status(500).send('Error reading file');
+      }
+      const jsonData = JSON.parse(data);
+      const username = req.body.username;
+      formatChatMessages(jsonData, username);
+      res.redirect(`/chat/${username}`);
+  });
 });
 
 app.get("/chat/:username", (req, res) => {
