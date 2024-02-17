@@ -23,7 +23,7 @@ function formatChatMessages(data, targetUser) {
                 User: messageUser,
                 Date: formattedDateString,
                 Time: formattedTime,
-                Text: message.Content || '', // Adjust accordingly if the 'Content' is null
+                Text: message.Content || '',
             };
         });
 
